@@ -67,12 +67,6 @@ void setup() {
 void loop() {
     currentMillis = millis();
 
-    // after wifiScanTime, print "START"
-    if (currentMillis - startMillis >= wifiScanTime) {
-        Serial.println("START");
-        startMillis = currentMillis;
-    }
-
     // Switch channel every channelSwitchInterval
     if (currentMillis - lastChannelSwitchTime >= channelSwitchInterval) {
         currentChannelIndex = (currentChannelIndex + 1) % 3; // Cycle through channels 1, 6, 11
